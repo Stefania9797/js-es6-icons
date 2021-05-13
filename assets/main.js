@@ -19,9 +19,18 @@ let icons=[
 /*Milestone 1:
 Mostriamo in pagina tutte le icone disponibili come da layout.*/
 icons.forEach((icon)=>{
+    if(icon.type=="user"){
+        icon.color="purple"
+    }else if(icon.type=="vegetable"){
+        icon.color="orange"
+    }else if(icon.type=="animal"){
+        icon.color="blue"
+    }
     document.getElementById("container").insertAdjacentHTML("beforeend",`
     <div class="icon">
-        <i class="${icon.family} ${icon.prefix}${icon.name} fa-cat"></i>
+        <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
         <h4>${icon.name}</h4>
     </div>`)
 })
+console.log(icons);
+//Milestone 2 Coloriamo le icone per tipo
