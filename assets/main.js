@@ -28,13 +28,13 @@ icons.forEach((icon)=>{
         icon.color="blue"
     }
     document.getElementById("container").insertAdjacentHTML("beforeend",`
-    <div id="icon">
+    <div id="icon" class=d-block>
         <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
         <h4>${icon.name}</h4>
         </div>`)
 })
 console.log(icons);
 //Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
-let animals=icons.filter((icon)=>{
-    return icon.type=="animal"
-})
+let animalOption=document.getElementById("animal").value
+let vegetableOption=document.getElementById("vegetable").value
+let userOption=document.getElementById("user").value
