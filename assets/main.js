@@ -18,7 +18,10 @@ let icons=[
 ];
 /*Milestone 1:
 Mostriamo in pagina tutte le icone disponibili come da layout.*/
-icons.forEach((icon)=>{
+printIcons()
+function printIcons(){
+    document.getElementById("container").innerHTML=""
+    icons.forEach((icon)=>{
     //Milestone 2 Coloriamo le icone per tipo
     if(icon.type=="user"){
         icon.color="purple"
@@ -27,14 +30,15 @@ icons.forEach((icon)=>{
     }else{
         icon.color="blue"
     }
-    document.getElementById("container").insertAdjacentHTML("beforeend",`
+    //Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+    let selectValue=document.getElementById("icon-type").value
+    if(selectValue==icon.type || selectValue=="all"){
+        document.getElementById("container").insertAdjacentHTML("beforeend",`
     <div id="icon" class=d-block>
-        <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
-        <h4>${icon.name}</h4>
-        </div>`)
+    <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
+    <h4>${icon.name}</h4>
+    </div>`)
+    }
 })
-console.log(icons);
-//Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
-let animalOption=document.getElementById("animal").value
-let vegetableOption=document.getElementById("vegetable").value
-let userOption=document.getElementById("user").value
+}
+document.getElementById("icon-type").addEventListener("change",printIcons)

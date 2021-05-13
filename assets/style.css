@@ -9,8 +9,11 @@
   flex-wrap: wrap;
   background-color: lightgrey;
 }
-.d-block {
+.show {
   display: block;
+}
+.hide {
+  display: none;
 }
 #icon {
   display: flex;
