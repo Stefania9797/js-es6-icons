@@ -18,3 +18,10 @@ let icons=[
 ];
 /*Milestone 1:
 Mostriamo in pagina tutte le icone disponibili come da layout.*/
+icons.forEach((icon)=>{
+    document.getElementById("container").insertAdjacentHTML("beforeend",`
+    <div class="icon">
+        <i class="${icon.family} ${icon.prefix}${icon.name} fa-cat"></i>
+        <h4>${icon.name}</h4>
+    </div>`)
+})
