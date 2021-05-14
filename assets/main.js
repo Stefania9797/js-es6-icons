@@ -20,7 +20,7 @@ let icons=[
 Mostriamo in pagina tutte le icone disponibili come da layout.*/
 printIcons()
 function printIcons(){
-    document.getElementById("container").innerHTML=""
+    document.getElementById("container").innerHTML="";
     icons.forEach((icon)=>{
     //Milestone 2 Coloriamo le icone per tipo
     if(icon.type=="user"){
@@ -34,7 +34,7 @@ function printIcons(){
     let selectValue=document.getElementById("icon-type").value
     if(selectValue==icon.type || selectValue=="all"){
         document.getElementById("container").insertAdjacentHTML("beforeend",`
-    <div id="icon" class=d-block>
+    <div id="icon">
     <i class="${icon.family} ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
     <h4>${icon.name}</h4>
     </div>`)
